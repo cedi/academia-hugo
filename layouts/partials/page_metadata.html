@@ -7,6 +7,10 @@
 
 <div class="article-metadata">
 
+  {{ if $page.Params.draft }}
+    {{ partial "page_draft.html" $page }}
+  {{ end }}
+
   {{/* If `authors` is set and is not empty. */}}
   {{ if $page.Params.authors }}
   {{ $authorLen := len $page.Params.authors }}

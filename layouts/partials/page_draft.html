@@ -1,0 +1,12 @@
+{{/* Draft info */}}
+
+{{ $merge_request := .Params.merge_request }}
+
+<br/>
+This article is in draft mode.
+
+{{ if $merge_request }}
+<br/>
+<a href="{{$merge_request}}">Review can be submitted via GitHub</a>
+{{ end }}
+<br/><br/>
