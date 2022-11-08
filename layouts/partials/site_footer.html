@@ -37,5 +37,21 @@
         </ul>
       </div>
     </div>
+    <div>
+      <ul class="list-inline text-right">
+        {{/* Policy menu item. */}}
+        {{ range site.Menus.policy }}
+        <li class="list-inline-item">
+          <a href="{{ .URL | relLangURL }}" {{ if $.IsHome }} data-target="{{ .URL }}" {{ end }}{{ ($.Scratch.Get "target" )
+            | safeHTMLAttr }}>
+            {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ range site.Params.mastodon }}
+      <a rel="me" href="{{ . }}" />
+      {{ end }}
+    </div>
   </div>
 </footer>
